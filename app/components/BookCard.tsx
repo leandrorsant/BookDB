@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 
-import { Card, Image, Text, Badge, Button, Group, Modal, Alert } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group, Modal, Alert, Center } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Anchor } from '@mantine/core';
 
@@ -22,15 +22,31 @@ const bookCard = ({id, bookTitle, bookDescription, bookPublishedDate, bookImageL
 
   return (
     <>
-  <div>
-      <Modal size="90%" opened={opened} onClose={close} title={bookTitle} centered>
-        <Image width="300px" src={bookImageLinks}></Image>
-        <Text>Published date: {bookPublishedDate}.</Text>
-        <Text>Description: {bookDescription? bookDescription : "No description found"}</Text>
+  <div style={{margin:"10px"}}>
+      <Modal  style={{maxWidth:"30%", height:"50px"}} opened={opened} onClose={close} title={bookTitle} centered>
+      <div>
+        <Image  ref={(node) => {
+      if (node) {
+        node.style.setProperty("width", "50%", "important");
+        node.style.setProperty("margin", "auto", "important");
+      }
+    }} src={bookImageLinks}></Image>
+        <Text style={{fontWeight:"bold"}}>Published date: <span style={{fontWeight:"normal"}}>{bookPublishedDate}</span></Text>
+        <br/>
+        <Text style={{fontWeight:"bold"}}>Description: <span style={{fontWeight:"normal"}}>{bookDescription? bookDescription : "No description found"}</span></Text>
+
+        </div>
       </Modal>
+
     <Card shadow="sm" padding="lg" radius="lg" withBorder>
       <Card.Section>
-        <Image
+        <Image ref={(node) => {
+            if (node) {
+              node.style.setProperty("width", "160px", "important");
+              node.style.setProperty("height", "auto", "important");
+              node.style.setProperty("margin", "auto", "important");
+            }
+          }}
           src={bookImageLinks}
           height={160}
           alt={bookTitle}
@@ -43,12 +59,12 @@ const bookCard = ({id, bookTitle, bookDescription, bookPublishedDate, bookImageL
       </Group>
 
       <Text size="sm" c="dimmed">
-        {bookDescription? bookDescription.slice(0, 15)+"...": "Found no description"}
+        {bookDescription? bookDescription.slice(0, 200)+"...": "Found no description"}
       </Text>
 
-      <Button onClick={open} variant="light" color="blue" fullWidth mt="md" radius="md">
+      <Center><Button style={{maxWidth:"200px"}} onClick={open} variant="light" color="blue" fullWidth mt="md" radius="md">
         Book Details
-      </Button>
+      </Button></Center>
     </Card>
     </div>
     

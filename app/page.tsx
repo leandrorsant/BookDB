@@ -59,8 +59,9 @@ export default function HomePage() {
         color="var(--mantine-color-blue-filled)"/></Center>
 
   <Grid style={{marginTop:"20px"}}>
+  <Grid.Col span={12}>
   {searchData && searchData.map( (data: any,index: any) => (
-   <Grid.Col span={{ sm: 2, md:2, lg: 2, xl:5}}>
+   
       <BookCard
         id={data.id}
         bookTitle={data.volumeInfo.title}
@@ -69,8 +70,8 @@ export default function HomePage() {
         bookImageLinks={data.volumeInfo.imageLinks? data.volumeInfo.imageLinks.thumbnail:"https://books.google.com.br/googlebooks/images/no_cover_thumb.gif" }
         key={data.id} 
       />
-    </Grid.Col> 
-  ) )}
+    
+  ) )} </Grid.Col>
   </Grid>
     
   </div></Center></>}
