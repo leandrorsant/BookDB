@@ -12,6 +12,7 @@ export default function HomePage() {
   const [searchData, setSearchData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [userSearchInput, setUserSearchInput] = useState('');
+  const [runSearch, setRunSearch] = useState(false);
 
   const fetchFromAPI =  async (query : string) => {
     const response = await fetch(API_URL + query)
@@ -34,8 +35,9 @@ export default function HomePage() {
     if(userSearchInput !== '')
       fetchFromAPI(userSearchInput);
     setLoading(false);
-  }, [userSearchInput]);
+  }, [runSearch]);
 
+  
 
   //title = data.volumeInfo.title
   //description data.volumeInfo.description
@@ -48,15 +50,24 @@ export default function HomePage() {
   <div style={{width:"80%"}}>
   <Center><Title order={1} style={{marginTop: "50px"}}>BookDB</Title></Center>
   <Center>
-    <Input placeholder="Search for any book" 
-      style={{width: "50%", textAlign:"center", marginButton:"50px"}} 
+    <Input  placeholder="Search for any book" 
+      style={{width: "80%", textAlign:"center", marginButton:"50px"}} 
       value={userSearchInput} 
-      onChange={(event) => setUserSearchInput(event.currentTarget.value)} 
+      onChange={(event) => setUserSearchInput(event.currentTarget.value)}
+      onKeyDown={(event)=>{
+        if(event.key == 'Enter'){
+          setRunSearch((prev)=> !prev);
+        }
+      }} 
     />
       
-      <IconSearch size={35}
+      <IconSearch 
+        size={35}
         stroke="{1.5}"
-        color="var(--mantine-color-blue-filled)"/></Center>
+        color="var(--mantine-color-blue-filled)"
+        style={{cursor:"pointer"}}
+        onClick={()=> setRunSearch((prev)=>!prev)}
+        /></Center>
 
   <Grid style={{marginTop:"20px"}}>
   <Grid.Col span={12}>
