@@ -3,12 +3,16 @@ Search engine build with Google Books API
 
 # Get started
 ```
-git clone https://github.com/leandrorsant/flag_guessing_app
-cd flag_guessing_app
+git clone https://github.com/leandrorsant/BookDB
+cd BookDB
 npm i
 npm run dev
 ```
 
 ## Screenshot:
-<img src="https://raw.githubusercontent.com/leandrorsant/flag_guessing_app/master/app/components/screenshots/Screenshot_20231015-100943-037.png" width=30% height=30%>
-</div>
+<img src="https://raw.githubusercontent.com/leandrorsant/BookDB/master/app/components/screenshots/BookDB_screenshot1.png" width=30% height=30%>
+<img src="https://raw.githubusercontent.com/leandrorsant/BookDB/master/app/components/screenshots/BookDB_screenshot2.png" width=30% height=30%>
+<img src="https://raw.githubusercontent.com/leandrorsant/BookDB/master/app/components/screenshots/BookDB_screenshot3.png" width=30% height=30%>
+<img src="https://raw.githubusercontent.com/leandrorsant/BookDB/master/app/components/screenshots/BookDB_screenshot4.png" width=30% height=30%>
+<img src="https://raw.githubusercontent.com/leandrorsant/BookDB/master/app/components/screenshots/BookDB_screenshot5.png" width=30% height=30%>
+
