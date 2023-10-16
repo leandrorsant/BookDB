@@ -1,5 +1,14 @@
-# Mantine Next Template
+# BookDB 
+Search engine build with Google Books API
 
-Get started with the template by clicking `Use this template` button on the top of the page.
+# Get started
+```
+git clone https://github.com/leandrorsant/flag_guessing_app
+cd flag_guessing_app
+npm i
+npm run dev
+```
 
-[Documentation](https://mantine.dev/guides/next/)
+## Screenshot:
+<img src="https://raw.githubusercontent.com/leandrorsant/flag_guessing_app/master/app/components/screenshots/Screenshot_20231015-100943-037.png" width=30% height=30%>
+</div>
