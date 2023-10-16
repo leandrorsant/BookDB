@@ -1,5 +1,5 @@
 # BookDB 
-Search engine build with Google Books API
+Search engine build with [Google Books API](https://developers.google.com/books/)
 
 # Get started
 ```
