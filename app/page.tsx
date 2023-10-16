@@ -50,7 +50,7 @@ export default function HomePage() {
   <div style={{width:"80%"}}>
   <Center><Title order={1} style={{marginTop: "50px"}}>BookDB</Title></Center>
   <Center>
-    <Input  placeholder="Search for any book" 
+    <Input  placeholder="Find any book" 
       style={{width: "80%", textAlign:"center", marginButton:"50px"}} 
       value={userSearchInput} 
       onChange={(event) => setUserSearchInput(event.currentTarget.value)}
